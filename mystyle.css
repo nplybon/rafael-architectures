@@ -8,6 +8,10 @@ body {
 .item3 { grid-area: right; }
 .item4 { grid-area: footer; }
 
+h1 {
+  text-align: center;
+}
+
 .grid-container {
   display: grid;
   grid-template-areas:
