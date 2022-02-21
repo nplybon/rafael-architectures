@@ -31,6 +31,8 @@ body {
 .ghead { grid-area: header;}
 .gmain { grid-area: main; }
 
+
+
 .grid-containerspecial {
   display: grid;
   grid-template-areas:
