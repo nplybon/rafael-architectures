@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!--Set the title and set up css-->
+
+<head>
+	<title>Contact</title>
+	<link rel="stylesheet" href="../mystyle.css">
+	<meta charset="UTF-8">
+</head>
+
+<body>
+
+	<!--Link each button in the menu bar to their respective page-->
+	<ul>
+		<li><a href="../index.html">Home</a></li>
+		<li><a href="../pages/gallery.html">Gallery</a></li>
+		<li><a href="../pages/resume.html">Resume</a></li>
+		<li><a class="active" href="contact.html">Contact</a></li>
+		<li><a href="../pages/about.html">About</a></li>
+
+	</ul>
+	<!--Set the header and display entry fields for First and Last name along with
+	a comment entry field so the user can leave any personal info or message they desire credit goes to w3schools-->
+	<div class="grid-container">
+		<div class="item1">
+			<h1>
+				Contact
+			</h1>
+		</div>
+		<div class="item2">
+
+			<div class="container">
+				<form action="/contact.php">
+					<label for="fname">First Name</label>
+					<input type="text" id="fname" name="firstname" placeholder="Your first name...">
+
+					<label for="lname">Last Name</label>
+					<input type="text" id="lname" name="lastname" placeholder="Your last name...">
+
+					<label for="message">Comments</label>
+					<textarea id="message" name="message" placeholder="Comments..." style="height:200px"></textarea>
+
+					<input type="submit" value="Submit">
+				</form>
+			</div>
+
+
+		</div>
+
+		<!--Create three links one to the company insta, company email and linkedin profile-->
+		<div class="item3">
+			<p>Follow
+				<a href="https://www.instagram.com/rafaelarchitectures/">@rafaelarchitectures</a>
+				on Instagram!
+			</p>
+			<p>Email 
+				<a href="mailto:rafanic12@gmail.com">rafanic12@gmail.com</a>
+			</p>
+			<p>Connect with me on LinkedIn
+				<a
+					href="https://www.linkedin.com/in/rafael-manzanares-129161220?trk=people-guest_people_search-card">here</a>
+			</p>
+
+
+		</div>
+	</div>
+
+</body>
+
+</html>
