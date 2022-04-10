@@ -30,17 +30,27 @@
 		</div>
 		<div class="item2">
 
+			<!-- We used a contact form instead of a login feature becuase it made more sense-->
 			<div class="container">
-				<form action="/contact.php">
-					<label for="fname">First Name</label>
-					<input type="text" id="fname" name="firstname" placeholder="Your first name...">
-
-					<label for="lname">Last Name</label>
-					<input type="text" id="lname" name="lastname" placeholder="Your last name...">
-
-					<label for="message">Comments</label>
-					<textarea id="message" name="message" placeholder="Comments..." style="height:200px"></textarea>
-
+				<form action="contact.php" method="post">
+					<div>
+						<label for="name">Name: *</label>
+						<input type="text" name="name" required="required" placeholder="Enter your name" />
+					</div>
+		
+					<div>
+						<label for="name">Email: *</label>
+						<input type="text" name="email" required="required" placeholder="Enter your email" />
+					</div>
+					<div>
+						<label for="name">Subject: *</label>
+						<input type="text" name="subject" required="required" placeholder="Enter a subject" />
+					</div>
+					<div>
+						<label for="message">Message: *</label>
+						<input type="text" name="message" required="required" placeholder="Enter a message" />
+					</div>
+		
 					<input type="submit" value="Submit">
 				</form>
 			</div>

@@ -7,6 +7,14 @@
 	<title>About</title>
 	<link rel="stylesheet" href="../mystyle.css">
 	<meta charset="UTF-8">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script>
+$(document).ready(function(){
+  $("button").click(function(){
+    $("#hide").fadeToggle();
+  });
+});
+</script>
 </head>
 
 <body>
@@ -32,25 +40,35 @@
 
 					<!--Display image-->
 					<img src="../images/rafael.jpg" alt="Rafael Headshot" width="400" height="400">
+					<br>
+
+					<p>Rafael Manzanares</p>
+					<p>21 Years Old</p>
+					<p>James Madison University</p>
 
 
-					<p>
+					<button>Toggle Hide</button><br>
 
 
-						&emsp; My name is Rafael Manzanares, and I am currently attending<br>
-						James Madison University's school of Architecture. I am open to<br>
-						most forms of architecture, but the one that I have interest in<br>
-						is residential, and that's why I am interested in companies that<br>
-						have a focus on Residential architecture. I’ve gained much of my<br>
-						experience through using softwares, such as AutoCAD, Sketchup,<br>
-						Photoshop and Illustrator, which has allowed me to showcase my<br>
-						abilities in the classroom. Those skills involved me using different<br>
-						types of scales, creating various prototypes, drawings and 3D models.<br>
-						These skills have not only accelerated my learning with technical<br>
-						and drawing designs, but also with my non-technical skills like<br>
-						time, task, and creativity.
-					</p>
-
+					<div id="hide">
+						<p>
+						
+							My name is Rafael Manzanares, and I am currently attending
+							James Madison University's school of Architecture. I am open to
+							most forms of architecture, but the one that I have interest in
+							is residential, and that's why I am interested in companies that
+							have a focus on Residential architecture. I’ve gained much of my
+							experience through using softwares, such as AutoCAD, Sketchup,
+							Photoshop and Illustrator, which has allowed me to showcase my
+							abilities in the classroom. Those skills involved me using different
+							types of scales, creating various prototypes, drawings and 3D models.
+							These skills have not only accelerated my learning with technical
+							and drawing designs, but also with my non-technical skills like
+							time, task, and creativity.
+						</p>
+	
+					</div>
+				
 
 
 				</div>
