@@ -33,7 +33,7 @@ h1 {
 }
 
 .grid-container > div {
-  background-color: rgb(124, 183, 250);
+  background-color: rgb(170, 209, 254);
   text-align: left;
   padding: 20px ;
   font-size: 20px;
@@ -57,7 +57,7 @@ h1 {
 }
 
 .grid-containerspecial > div {
-  background-color: rgb(124, 183, 250);
+  background-color: rgb(170, 209, 254);
   padding: 20px ;
   font-size: 20px;
 }
@@ -120,5 +120,17 @@ input[type=submit]:hover {
   border-radius: 5px;
   background-color: rgba(0, 0, 0, 0);
   padding: 20px;
+}
+
+#work300, #toggle300, #work220, #toggle220 {
+  padding: 5px;
+  text-align: center;
+  background-color: #dcdcdc;
+  border: solid 1px #000000;
+}
+
+#work300, #work220 {
+  padding: 50px;
+  display: none;
 }
 

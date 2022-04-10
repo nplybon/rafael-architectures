@@ -9,6 +9,8 @@
 </head>
 
 <body>
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
 
 	<!--Link each button in the menu bar to their respective page-->
 	<ul>
@@ -27,33 +29,52 @@
 		</div>
 		<!--Display description of first assignment then display pdf of drawings-->
 		<div class="gmain">
-			<h2>ARCD300 Work</h2>
-			<p>Intermediate design studio building upon skills of ARCD 200-ARCD 202 sequence. Projects will be of
+			<h2>ARCD300</h2>
+			<p>Course Description: Intermediate design studio building upon skills of ARCD 200-ARCD 202 sequence. Projects will be of
 				greater complexity, scope and technical requirement. Design studies will incorporate drawing,
 				diagramming, models, digital studies and writing. Projects will have a focus on site development in an
 				urban or exurban context. Case studies will be required.</p>
-			<hr>
-			<iframe src="../pdfs/arcd300.pdf" title="ARCD 300" width="1240" height="600" style="border: none"
+			<!-- slideToggle feature from W3Schools-->
+			<div id="toggle300">Click here to see my work</div>
+			<div id="work300">
+				<iframe src="../pdfs/arcd300.pdf" title="ARCD 300" width="1240" height="600" style="border: none"
 				></iframe>
+			</div>
 
+		
 				<!--Display description of second assignment then display both pdfs of drawings-->
 			<hr>
-			<h2>ARCD220 Work</h2>
-			<p>This course will introduce students to principles used in digital processes and representation in
+			<h2>ARCD220</h2>
+			<p>Course Description: This course will introduce students to principles used in digital processes and representation in
 				architectural production. Technologies to draw three dimensionally on the computer will be considered as
 				a discipline within itself, and students will be instructed to use the machine for design exploration.
 				Various software packages will be utilized during the semester</p>
-			<hr>
-			<iframe src="../pdfs/assignment3a.pdf" title="Acrhitecture Assignment 3A" width="1240" height="600"
+			<!-- slideToggle feature from W3Schools-->
+			<div id="toggle220">Click here to see my work</div>
+			<div id="work220">
+				<iframe src="../pdfs/assignment3a.pdf" title="Acrhitecture Assignment 3A" width="1240" height="600"
 				style="border: none" ></iframe>
-			<iframe src="../pdfs/assignment6.pdf" title="Architecture Assignment 6" width="1240"
+				<iframe src="../pdfs/assignment6.pdf" title="Architecture Assignment 6" width="1240"
 				height="600" style="border: none" ></iframe>
-			<hr>
-
+			</div>
+	
+		
 
 		</div>
 	</div>
 
 </body>
+<script> 
+	$(document).ready(function(){
+	  $("#toggle300").click(function(){
+		$("#work300").slideToggle("slow");
+	  });
+	});
 
+	$(document).ready(function(){
+	  $("#toggle220").click(function(){
+		$("#work220").slideToggle("slow");
+	  });
+	});
+	</script>
 </html>
