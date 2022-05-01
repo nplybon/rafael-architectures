@@ -7,11 +7,12 @@ body {
 .item1 { grid-area: header;}
 .item2 { grid-area: main; }
 .item3 { grid-area: right; }
-.item4 { grid-area: footer; }
+.item4 { grid-area: footer;}
 
 h1 {
   text-align: center;
 }
+
 
 .himg {
   text-align: center;
@@ -134,4 +135,7 @@ input[type=submit]:hover {
   display: none;
 }
 
+#hide {
+  display: none;
+}
 

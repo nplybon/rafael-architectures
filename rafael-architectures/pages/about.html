@@ -8,6 +8,7 @@
 	<link rel="stylesheet" href="../mystyle.css">
 	<meta charset="UTF-8">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<!--Internally linked js code for fade toggle-->
 <script>
 $(document).ready(function(){
   $("button").click(function(){
@@ -24,7 +25,7 @@ $(document).ready(function(){
 		<li><a href="../index.html">Home</a></li>
 		<li><a href="../pages/gallery.html">Gallery</a></li>
 		<li><a href="../pages/resume.html">Resume</a></li>
-		<li><a href="../pages/contact.html">Contact</a></li>
+		<li><a href="../pages/contact.php">Contact</a></li>
 		<li><a class="active" href="about.html">About</a></li>
 	</ul>
 	<!--Set the header and display the about me bio above the picture of Rafael-->
@@ -47,12 +48,10 @@ $(document).ready(function(){
 					<p>James Madison University</p>
 
 
+					<!-- Hide toggle from w3schools-->
 					<button>Toggle Hide</button><br>
-
-
 					<div id="hide">
-						<p>
-						
+						<p>		
 							My name is Rafael Manzanares, and I am currently attending
 							James Madison University's school of Architecture. I am open to
 							most forms of architecture, but the one that I have interest in
