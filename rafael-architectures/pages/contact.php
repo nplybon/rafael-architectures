@@ -30,11 +30,10 @@
 	<div class="grid-container">
 		<div class="item1">
 			<h1>
-				Contact
+				We would love your feedback!
 			</h1>
 		</div>
 		<div class="item2">
-
 			<!-- We used a contact form instead of a login feature becuase it made more sense-->
 			<div class="container">
 				<form action="contact.php" method="post">
@@ -79,32 +78,35 @@
 
 		</div>
 	</div>
+	<h1> Here's what others are saying about Rafael Architectures</h1>
 </body>
 </html>
 
 <?php
 include_once 'database.php';
 
-$query = "SELECT * FROM users";
+$query = "SELECT * FROM comments ORDER BY time DESC";
 if($result = mysqli_query($conn, $query)){
     if(mysqli_num_rows($result) > 0){
-        echo "<table>";
-            echo "<tr>";
-                echo "<th>id</th>";
-                echo "<th>name</th>";
-                echo "<th>email</th>";
-            echo "</tr>";
+            
         while($row = mysqli_fetch_array($result)){
-            echo "<tr>";
-                echo "<td>" . $row['userID'] . "</td>";
-                echo "<td>" . $row['name'] . "</td>";
-                echo "<td>" . $row['email'] . "</td>";
-            echo "</tr>";
+			echo "<body style=background-color:white>";
+				echo "<p align=left>";
+                echo $row['author'];
+                echo " (" . $row['email'] . ") <br>";
+				echo $row['subject'];
+				echo "<br>";
+                echo $row['text'];
+				echo "<br>";
+				echo $row['time'];
+				echo "<br>";
+				echo "</p>";	
         }
-        echo "</table>";
+        
         mysqli_free_result($result);
     } else{
-        echo "No comments about Rafael Architectures at this time.";
+		echo "<body style=background-color:white>";
+        echo "No comments at this time.";
     }
 } else{
     echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
@@ -116,32 +118,13 @@ if (isset($_POST['name'], $_POST['email'], $_POST['subject'], $_POST['text'])) {
 	$subject = $_POST['subject'];
 	$time = date("F j, Y, g:i a"); 
 	$text = $_POST['text'];		
-	$insertusers = "INSERT INTO users (name, email)
-	VALUES ('$name','$email')";
+	$insert = "INSERT INTO comments (author, email, subject, text, time)
+	VALUES ('$name','$email', '$subject', '$text', '$time')";
 
-	if (!mysqli_query($conn, $insertusers)) {
-		echo "Error inserting into users table";
-	} 
-	$sql = "SELECT userID FROM users WHERE name = $name";
-	$userID = mysqli_query($conn, $sql);
-	echo "$userID";
-	$insertmessages = "INSERT INTO messages (userID, subject, text, time)
-	VALUES ('$userID', '$subject', '$text', '$time')";
-	 if (mysqli_query($conn, $insertmessages)) {
-		echo "New record created successfully !";
-	 } else {
-		echo "Error: " . $insertmessages . "" . mysqli_error($conn);
-	 }
-
-	$query = "SELECT * FROM users";
-	$result = mysqli_query($conn, $query);
-
-	// while($row = mysqli_fetch_array($result)){   //Creates a loop to loop through results
-	// 	//echo "<tr><td>" . htmlspecialchars($row['name']) . "</td><td>" . htmlspecialchars($row['email']) . "</td></tr>";  //$row['index'] the index here is a field name
-	// 	echo "<p>{$name} <br> {$email}";
-	// }
+	if (!mysqli_query($conn, $insert)) {
+		echo "Error inserting into table";
+	}
 
 	mysqli_close($conn);
-
 } 
 ?>
