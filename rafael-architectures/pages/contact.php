@@ -83,12 +83,12 @@
 </html>
 
 <?php
+// set up connection to DB
 include_once 'database.php';
-
+// generates the message board, most recent post first
 $query = "SELECT * FROM comments ORDER BY time DESC";
 if($result = mysqli_query($conn, $query)){
-    if(mysqli_num_rows($result) > 0){
-            
+    if(mysqli_num_rows($result) > 0){     
         while($row = mysqli_fetch_array($result)){
 			echo "<body style=background-color:white>";
 				echo "<p align=left>";
@@ -101,30 +101,41 @@ if($result = mysqli_query($conn, $query)){
 				echo $row['time'];
 				echo "<br>";
 				echo "</p>";	
-        }
-        
+        }    
         mysqli_free_result($result);
     } else{
 		echo "<body style=background-color:white>";
+		echo "<p align=center>";
         echo "No comments at this time.";
+		echo "</p>";	
     }
 } else{
     echo "ERROR: Could not able to execute $query. " . mysqli_error($conn);
 }
 
+// check to see if all fields are filled out
 if (isset($_POST['name'], $_POST['email'], $_POST['subject'], $_POST['text'])) {
 	$name = $_POST['name'];
 	$email = $_POST['email'];
 	$subject = $_POST['subject'];
 	$time = date("F j, Y, g:i a"); 
 	$text = $_POST['text'];		
+	// make sure email is an email
+	if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
+		echo "<p align=center>";
+		echo "Invalid email format, please enter a valid email and submit the form again.";
+		echo "</p>";	
+	} else {
+	// insert the results into comments table
 	$insert = "INSERT INTO comments (author, email, subject, text, time)
 	VALUES ('$name','$email', '$subject', '$text', '$time')";
-
 	if (!mysqli_query($conn, $insert)) {
 		echo "Error inserting into table";
 	}
-
+	// close the connection
 	mysqli_close($conn);
+
+	}
+
 } 
 ?>
